@@ -1,49 +1,96 @@
 # Fullstack-Profile-Model
 Full-stack web app using Angular 18, Django REST API, and MySQL.
 
-## 1.First of all need to setup
-1.Open terminal and my sql 
-   1. mysql -u root -p and enter the password
-1.Open the terminal and setup git 
-1.Open the editor and run the virtual environment. 
-   1.source .venv/bin/activate
-1.Open the git and create branch called dev for working
+# Fullstack-Profile-Model
 
-## 2.Start the building Web App 
-2.Install the package (can see these libraries under the lib folder)
-  2.django 
-  2.djangoframework
-  2.pymysql
-2.Start the working on project 
-  2.django -admin startproject profile_1 (name of the project)
-   _after that created profile_1 file and manage.py file _
-2.change the directry to profile_1 
-   - cd profile_1  
-2.create the api file - run,
-   - python manage.py startapp api (name)
+A full-stack web application using Angular 18, Django REST Framework, and MySQL.
 
-## 3.Create the Database 
-3.Open the terminal and run 
-  3.CREATE DATABASE profile_master;
-3.Check the database
-  3.SHOW DATABASES;
-3.To change the database ( work on the database)
-  3.USE profile_master;
+---
 
-## 4.Work on the settings.py file
-Open the settings.py file
-- inside the settings.py edit the infomations under installed app
-    - add :
-      'rest_framework',
-      'api',
+## Initial Setup
 
-- inside the Databases:
-      - add:
-         NAME:'Profile_master',
-         USER:'Root',
-         PASSWORD:'',
-         HOST:'Localhost',
-         PORT:3306,
+### 1. MySQL Setup
 
-        
-    
+```bash
+mysql -u root -p
+
+Enter your MySQL password when prompted.
+2. Git Setup
+
+git init
+git checkout -b dev
+
+Create a new branch called dev for working.
+3. Virtual Environment
+
+Activate the virtual environment:
+
+source .venv/bin/activate
+
+Build the Web App
+1. Install Required Packages
+
+Install the necessary packages (you can also see them under the lib folder):
+
+pip install django djangorestframework pymysql
+
+2. Create the Django Project
+
+Start the Django project:
+
+django-admin startproject profile_1
+
+After this, the profile_1 folder and manage.py file will be created.
+
+Navigate into the project directory:
+
+cd profile_1
+
+3. Create the API App
+
+Create a new app named api:
+
+python manage.py startapp api
+
+Create the Database
+1. Open MySQL and Run:
+
+CREATE DATABASE profile_master;
+SHOW DATABASES;
+USE profile_master;
+
+Configure settings.py
+
+Open the profile_1/settings.py file.
+1. Add Installed Apps
+
+Inside the INSTALLED_APPS section, add:
+
+'rest_framework',
+'api',
+
+2. Configure Database
+
+Replace the DATABASES section with the following:
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'profile_master',
+        'USER': 'root',
+        'PASSWORD': '',  # Enter your MySQL password here
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
+Notes
+
+    Always activate your virtual environment before running commands:
+
+source .venv/bin/activate
+
+Ensure MySQL server is running before starting the Django project.
+
+Work on the dev branch and merge with main when the project is stable.
+
