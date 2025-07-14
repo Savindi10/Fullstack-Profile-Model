@@ -1,78 +1,87 @@
 # Fullstack-Profile-Model
 Full-stack web app using Angular 18, Django REST API, and MySQL.
 
-# Fullstack-Profile-Model
 
-A full-stack web application using Angular 18, Django REST Framework, and MySQL.
+
+A full-stack web application using ***Angular 18***, ***Django REST Framework***, and ***MySQL.***
 
 ---
 
-## Initial Setup
+## >>> Initial Setup
 
 ### 1. MySQL Setup
-
 ```bash
 mysql -u root -p
-
 Enter your MySQL password when prompted.
-2. Git Setup
 
+
+### 2. Git Setup
+```bash
 git init
 git checkout -b dev
-
 Create a new branch called dev for working.
-3. Virtual Environment
 
+
+### 3. Virtual Environment
 Activate the virtual environment:
-
+```bash
 source .venv/bin/activate
 
-Build the Web App
-1. Install Required Packages
 
+----
+
+## >>> Build the Web App
+
+### 1. Install Required Packages
 Install the necessary packages (you can also see them under the lib folder):
 
+```bash
 pip install django djangorestframework pymysql
 
-2. Create the Django Project
 
+### 2. Create the Django Project
 Start the Django project:
-
+```bash
 django-admin startproject profile_1
 
-After this, the profile_1 folder and manage.py file will be created.
+After this, the **profile_1 folder** and **manage.py** file will be created.
 
 Navigate into the project directory:
-
+```bash
 cd profile_1
 
-3. Create the API App
 
+###3. Create the API App
 Create a new app named api:
-
+```bash
 python manage.py startapp api
 
-Create the Database
-1. Open MySQL and Run:
 
+----
+
+## >>> Create the Database
+1. Open MySQL and Run:
+```sql
 CREATE DATABASE profile_master;
 SHOW DATABASES;
 USE profile_master;
 
+
+----
+
 Configure settings.py
+Open the **profile_1/settings.py** file.
 
-Open the profile_1/settings.py file.
 1. Add Installed Apps
-
-Inside the INSTALLED_APPS section, add:
-
+Inside the **INSTALLED_APPS** section, add:
+```python
 'rest_framework',
 'api',
+```
 
 2. Configure Database
-
 Replace the DATABASES section with the following:
-
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -83,14 +92,15 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+```
 
 Notes
 
-    Always activate your virtual environment before running commands:
+   -Always activate your virtual environment before running commands:
 
 source .venv/bin/activate
 
-Ensure MySQL server is running before starting the Django project.
+    -Ensure MySQL server is running before starting the Django project.
 
-Work on the dev branch and merge with main when the project is stable.
+    -Work on the dev branch and merge with main when the project is stable.
 
